@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Predict if You are Diabetic </h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="float" name="number_of_times_pregnant" id="number_of_times_pregnant" placeholder="number_of_times_pregnant">
+            <input type="float" name="plasma_glucose_concentration" id="plasma_glucose_concentration" placeholder="plasma_glucose_concentration">
+            <input type="float" name="diastolic_blood_pressure" id="diastolic_blood_pressure" placeholder="diastolic_blood_pressure">
+            <input type="float" name="triceps_skinfold_thickness" id="triceps_skinfold_thickness" placeholder="triceps_skinfold_thickness">
+            <input type="float" name="serum_insulin" id="serum_insulin" placeholder="serum_insulin">
+            <input type="float" name="body_mass_index" id="body_mass_index" placeholder="body_mass_index">
+            <input type="float" name="diabetes_pedigree_function" id="diabetes_pedigree_function" placeholder="diabetes_pedigree_function">
+            <input type="float" name="age" id="age" placeholder="age">
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
